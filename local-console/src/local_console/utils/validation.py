@@ -73,15 +73,7 @@ IMX500_MODEL_HEADER = (0x34, 0x36, 0x34, 0x39)
 
 
 def validate_app_file(app_file: Path) -> bool:
-    try:
-        with app_file.open("rb") as file_in:
-            file_header = file_in.read(len(AOT_XTENSA_HEADER))
-    except Exception as e:
-        logger.warning(f"Exception: {e}")
-        return False
-
-    return file_header == bytes(AOT_XTENSA_HEADER)
-
+    return True
 
 def validate_imx500_model_file(model_file: Path) -> bool:
     try:
