@@ -257,7 +257,7 @@ def single_module_manifest_setup(
             "modules": {
                 module_name: {
                     "entryPoint": "main",
-                    "moduleImpl": "wasm",
+                    "moduleImpl": "python",
                     "downloadUrl": "",
                     "hash": "",
                 }
