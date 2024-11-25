@@ -111,7 +111,7 @@ async def test_streaming_rpc_start(mocked_driver_with_agent, cs_init) -> None:
     ):
         await driver.camera_state.streaming_rpc_start()
         mock_rpc.assert_awaited_with(
-            "backdoor-EA_Main",
+            "node",
             "StartUploadInferenceData",
             StartUploadInferenceData(
                 StorageName=upload_url,
