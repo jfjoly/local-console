@@ -45,7 +45,7 @@ logger = logging.getLogger(__name__)
 
 
 # MQTT constants
-EA_STATE_TOPIC = "state/backdoor-EA_Main/placeholder"
+EA_STATE_TOPIC = "state/node/placeholder"
 SYSINFO_TOPIC = "systemInfo"
 DEPLOY_STATUS_TOPIC = "deploymentStatus"
 CONNECTION_STATUS_TIMEOUT = timedelta(seconds=180)

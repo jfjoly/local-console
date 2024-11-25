@@ -71,7 +71,7 @@ async def test_streaming_rpc_stop(cs_init, nursery):
 
         await driver.streaming_rpc_stop()
         mock_rpc.assert_awaited_with(
-            "backdoor-EA_Main", "StopUploadInferenceData", "{}"
+            "node", "StopUploadInferenceData", "{}"
         )
 
 

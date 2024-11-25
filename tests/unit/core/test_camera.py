@@ -249,7 +249,7 @@ async def test_process_state_topic_correct(
         observer.assert_not_awaited()
 
         backdoor_state = {
-            "state/backdoor-EA_Main/placeholder": b64encode(
+            "state/node/placeholder": b64encode(
                 device_config.model_dump_json().encode("utf-8")
             ).decode("utf-8")
         }
@@ -276,7 +276,7 @@ async def test_process_state_topic_wrong(schema, caplog, cs_init) -> None:
     camera._onwire_schema = schema
     wrong_obj = {"a": "b"}
     backdoor_state = {
-        "state/backdoor-EA_Main/placeholder": b64encode(json.dumps(wrong_obj).encode())
+        "state/node/placeholder": b64encode(json.dumps(wrong_obj).encode())
     }
     await camera._process_state_topic(backdoor_state)
     assert "Error while validating device configuration" in caplog.text

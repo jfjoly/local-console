@@ -36,7 +36,7 @@ class Camera:
     information that the Camera Firmware reports.
     """
 
-    EA_STATE_TOPIC = "state/backdoor-EA_Main/placeholder"
+    EA_STATE_TOPIC = "state/node/placeholder"
     SYSINFO_TOPIC = "systemInfo"
     DEPLOY_STATUS_TOPIC = "deploymentStatus"
 

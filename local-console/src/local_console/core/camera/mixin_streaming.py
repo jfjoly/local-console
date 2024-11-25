@@ -49,7 +49,7 @@ logger = logging.getLogger(__name__)
 
 
 # MQTT constants
-EA_STATE_TOPIC = "state/backdoor-EA_Main/placeholder"
+EA_STATE_TOPIC = "state/node/placeholder"
 SYSINFO_TOPIC = "systemInfo"
 DEPLOY_STATUS_TOPIC = "deploymentStatus"
 CONNECTION_STATUS_TIMEOUT = timedelta(seconds=180)
@@ -114,14 +114,14 @@ class StreamingMixin(HasMQTTset, IsAsyncReady):
     async def streaming_rpc_stop(self) -> None:
         assert self.mqtt_client
 
-        instance_id = "backdoor-EA_Main"
+        instance_id = "node"
         method = "StopUploadInferenceData"
         await self.mqtt_client.rpc(instance_id, method, "{}")
 
     async def streaming_rpc_start(self, roi: Optional[UnitROI] = None) -> None:
         assert self.mqtt_client
 
-        instance_id = "backdoor-EA_Main"
+        instance_id = "node"
         method = "StartUploadInferenceData"
         host = get_webserver_ip()
         upload_url = f"http://{host}:{self.upload_port}"
